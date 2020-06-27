@@ -113,9 +113,9 @@
                           </div>
                           <div class="card-footer">
                             <small class="text-muted">pay with </small> 
-                            <img src="{{ asset('image/icon/paypal.webp') }}" alt="payla" class="image">
-                            <img src="{{ asset('image/icon/stripe.webp') }}" alt="payla" class="image">
-                            <img src="{{ asset('image/icon/mollie.png') }}" alt="payla" class="image">
+                            <a href=""><img src="{{ asset('image/icon/paypal.webp') }}" alt="payla" class="image"></a>
+                            <a href=""><img src="{{ asset('image/icon/stripe.webp') }}" alt="payla" class="image"></a>
+                            <a href=""><img src="{{ asset('image/icon/mollie.png') }}" alt="payla" class="image"></a>
                           </div>
                         </div>
                       </div>
