@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Multi Payment Gateway</title>
+        <!-- bootstrap  -->
+        <!-- CSS only CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -16,18 +20,21 @@
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 100vh;
                 margin: 0;
+                padding-top: 20px;
+                padding-bottom: 20px;
             }
 
             .full-height {
                 height: 100vh;
+                padding: 20px;
             }
 
             .flex-center {
                 align-items: center;
                 display: flex;
                 justify-content: center;
+
             }
 
             .position-ref {
@@ -61,40 +68,60 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            h5{
+                color: brown;
+            }
+            h4{
+                color: blue;
+            }
+            .card-img-top{
+                -webkit-box-shadow: 0px 13px 15px -3px rgba(29,55,77,0.17);
+                -moz-box-shadow: 0px 13px 15px -3px rgba(29,55,77,0.17);
+                box-shadow: 0px 13px 15px -3px rgba(29,55,77,0.17);
+                border-radius: 20px;
+            }
+            .card{
+                border-radius: 20px;
+            }
         </style>
     </head>
     <body>
+    <div class="container">
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+            <div class="row">
+                
+                <div class="col-md-5">
+                    <div class="m-b-md">
+                        <h3>Multi Payment Gateway</h3> <hr>
+                    </div>
                 </div>
-            @endif
+                <div class="col-md-1 offset-1">
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-5">
+                    <div class="card-group">
+                        <div class="card">
+                          <img src="{{ asset('image/adidas-shoe.jpg') }}" class="card-img-top" alt="adidas-shoe.jpg" style="height: 385px;">
+                          <div class="card-body">
+                            <h5 class="card-title">4D RUN 1.0 PARLEY SHOES</h5>
+                            <h4>Price $180</h4>
+                            <p class="card-text">A running shoe created for the future. With input from 4000 athletes, the design of the 3D-printed midsole was devised. </p>
+                          </div>
+                          <div class="card-footer">
+                            <small class="text-muted">payment Gateway</small>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
+    </div>
+
+
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
     </body>
 </html>
