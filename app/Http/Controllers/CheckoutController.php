@@ -11,7 +11,7 @@ class CheckoutController extends Controller
 
         $token = $_POST['stripeToken'];
         $charge = \Stripe\Charge::create([
-            'amount'    =>  180000,
+            'amount'    =>  18000,
             'currency'  =>  'usd',
             'description'   =>  '4D RUN 1.0 PARLEY SHOES Payment. Developer www.jahidul.info',
             'source'    =>  $token,
