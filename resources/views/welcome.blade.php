@@ -87,6 +87,9 @@
                 width:30px; 
                 margin-left:30px;
             }
+            .modal-content{
+                margin-top: 50%;
+            }
         </style>
     </head>
     <body>
@@ -113,9 +116,9 @@
                           </div>
                           <div class="card-footer">
                             <small class="text-muted">pay with </small> 
-                            <a href=""><img src="{{ asset('image/icon/paypal.webp') }}" alt="payla" class="image"></a>
-                            <a href=""><img src="{{ asset('image/icon/stripe.webp') }}" alt="payla" class="image"></a>
-                            <a href=""><img src="{{ asset('image/icon/mollie.png') }}" alt="payla" class="image"></a>
+                            <a href="{{ url('/checkout/paypal') }}"><img src="{{ asset('image/icon/paypal.webp') }}" alt="payla" class="image"></a>
+                            <a href="" data-toggle="modal" data-target="#exampleModalStripe"><img src="{{ asset('image/icon/stripe.webp') }}" alt="payla" class="image"></a>
+                            <a href="{{ url('/checkout/mollie') }}"><img src="{{ asset('image/icon/mollie.png') }}" alt="payla" class="image"></a>
                           </div>
                         </div>
                       </div>
@@ -123,6 +126,39 @@
             </div>
         </div>
     </div>
+
+        <!-- stripe modal      -->
+        <div class="modal fade" id="exampleModalStripe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">4D RUN 1.0 PARLEY SHOES for Price $180</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-footer">
+
+                <form action="{{ url('/checkout/stripe') }}" method="post">
+                    @csrf
+                    <script
+                    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="pk_test_51GyekPA1bjxouOwwZxyVU2UuGAEJsVI0ZtmvDE6r957OPTfUhrLKthn9vZrX2qSjjgzSLwnDKOSXaWV4dGs0cMeG00cpnQvwbm"
+                    data-amount="18000"
+                    data-name="4D RUN 1.0 PARLEY SHOES"
+                    data-description="4D RUN 1.0 PARLEY SHOES"
+                    data-local="auto"
+                    data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                    data-currency="usd">
+                    </script>
+                </form>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+          <!-- stripe modal  -->
 
 
         <!-- JS, Popper.js, and jQuery -->
