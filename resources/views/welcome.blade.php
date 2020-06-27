@@ -83,6 +83,10 @@
             .card{
                 border-radius: 20px;
             }
+            .image{
+                width:30px; 
+                margin-left:30px;
+            }
         </style>
     </head>
     <body>
@@ -108,7 +112,10 @@
                             <p class="card-text">A running shoe created for the future. With input from 4000 athletes, the design of the 3D-printed midsole was devised. </p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted">payment Gateway</small>
+                            <small class="text-muted">pay with </small> 
+                            <img src="{{ asset('image/icon/paypal.webp') }}" alt="payla" class="image">
+                            <img src="{{ asset('image/icon/stripe.webp') }}" alt="payla" class="image">
+                            <img src="{{ asset('image/icon/mollie.png') }}" alt="payla" class="image">
                           </div>
                         </div>
                       </div>
